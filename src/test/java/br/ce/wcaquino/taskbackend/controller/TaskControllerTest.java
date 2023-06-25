@@ -62,14 +62,14 @@ public class TaskControllerTest {
             controller.save(todo);
             Assert.fail("Não deveria chegar neste ponto!!!");
         } catch (ValidationException e) {
-            Assert.assertEquals("Due date must not be in past", e.getMessage() );
+            Assert.assertEquals("Due date must not be in past_", e.getMessage() );
         }
     }
 
     @Test
     public void deveSalvarTarefaComSucesso() throws ValidationException {
         Task todo = new Task();
-        todo.setTask("Todo teste");
+        //todo.setTask("Todo teste");
         todo.setDueDate(LocalDate.now());
 
         controller.save(todo);
