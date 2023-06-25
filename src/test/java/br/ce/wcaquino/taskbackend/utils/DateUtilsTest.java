@@ -23,7 +23,7 @@ public class DateUtilsTest {
     public void deveRetornarFalseParaDatasPassadas(){
         LocalDate data = LocalDate.now().plusDays(-1);
         System.out.println(data);
-        Assert.assertTrue(DateUtils.isEqualOrFutureDate(data));
+        Assert.assertFalse(DateUtils.isEqualOrFutureDate(data));
     }
 
 }
