@@ -2,7 +2,7 @@ pipeline{
     agent any
     stages {
         stage ('Just Test') {
-            eteps {
+            steps {
                 bat 'echo deu certo!'
             }
         }
