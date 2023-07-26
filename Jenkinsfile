@@ -65,5 +65,13 @@ pipeline {
                 bat 'docker-compose up -d'
             }
         }
+        stage('Check Prod') {
+            steps {
+                sleep(5)
+                dir('funcional-test') {
+                    bat 'mvn verify -DskipTest'
+                }
+            }
+        }
     }
 }
