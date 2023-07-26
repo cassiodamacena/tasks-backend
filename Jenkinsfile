@@ -29,7 +29,7 @@ pipeline {
                 }
             }
         }
-        stage('Deploy Backend') {
+        stage('Deploy Backend HML') {
             steps {
                 deploy adapters: [tomcat8(credentialsId: 'TomcatLogin', path: '', url: 'http://localhost:8001/')], contextPath: 'tasks-backend', war: 'target/tasks-backend.war'
             }
@@ -42,7 +42,7 @@ pipeline {
                 }
             }
         }
-        stage('Deploy Frontend') {
+        stage('Deploy Frontend HML') {
             steps {
                 dir('frontend') {
                     git credentialsId: '62cedd6a-de34-4909-a166-35be2ec7444d', url: 'https://github.com/cassiodamacena/tasks-frontend'
